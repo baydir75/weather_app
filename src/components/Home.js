@@ -1,6 +1,7 @@
 // Component Page d'accueil
 import weatherSearch from '../API/API'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { FavoriteContext } from '../context/FavoriteContext'
 
 const Home = () => {
     const [city, setcity] = useState("")
@@ -25,6 +26,7 @@ const Home = () => {
             <div>
                 <p>City : {data.name}</p>
                 <p>Temperature : {data.main ? data.main.temp : null}</p>
+                <button>Ajoutez aux favoris</button>
             </div>
         </div>
     )
